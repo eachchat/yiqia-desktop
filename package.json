@@ -1,5 +1,5 @@
 {
-  "name": "element-desktop",
+  "name": "yiqia-desktop",
   "productName": "亿洽",
   "main": "lib/electron-main.js",
   "version": "1.9.8",
@@ -7,7 +7,7 @@
   "author": "Element",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vector-im/element-desktop"
+    "url": "https://github.com/eachchat/yiqia-desktop"
   },
   "license": "Apache-2.0",
   "files": [],
