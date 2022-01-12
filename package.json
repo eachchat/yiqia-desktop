@@ -2,7 +2,7 @@
   "name": "yiqia-desktop",
   "productName": "亿洽",
   "main": "lib/electron-main.js",
-  "version": "1.9.8",
+  "version": "2.5.0",
   "description": "",
   "author": "Element",
   "repository": {
