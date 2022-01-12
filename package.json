@@ -3,7 +3,7 @@
   "productName": "亿洽",
   "main": "lib/electron-main.js",
   "version": "1.9.8",
-  "description": "A feature-rich client for Matrix.org",
+  "description": "",
   "author": "Element",
   "repository": {
     "type": "git",
