@@ -4,7 +4,7 @@
   "main": "lib/electron-main.js",
   "version": "2.5.0",
   "description": "",
-  "author": "Element",
+  "author": "亿洽",
   "repository": {
     "type": "git",
     "url": "https://github.com/eachchat/yiqia-desktop"

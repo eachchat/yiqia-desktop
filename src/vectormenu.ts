@@ -131,7 +131,7 @@ export function buildMenuTemplate(): Menu {
             submenu: [
                 {
                     label: _t('Element Help'),
-                    click() { shell.openExternal('https://element.io/help'); },
+                    click() { shell.openExternal('https://bbs.yiqia.com'); },
                 },
             ],
         },
