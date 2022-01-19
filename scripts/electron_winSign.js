@@ -14,9 +14,10 @@ function computeSignToolArgs(options, keyContainer) {
         );
     }
 
-    args.push('/kc', keyContainer);
+    if(keyContainer) args.push('/kc', keyContainer);
     // To use the hardware token (this should probably be less hardcoded)
-    args.push('/csp', 'eToken Base Cryptographic Provider');
+    // if there is no /kc here should not have /csp
+    // args.push('/csp', 'eToken Base Cryptographic Provider');
     // The certificate file. Somehow this appears to be the only way to specify
     // the cert that works. If you specify the subject name or hash, it will
     // say it can't associate the private key to the certificate.
@@ -24,7 +25,8 @@ function computeSignToolArgs(options, keyContainer) {
     // so we don't have to hard-code this here
     // fwiw https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing
     // is about the most useful resource on automating code signing...
-    args.push('/f', 'element.io\\New_Vector_Ltd.pem');
+    // we have the certificate in key chain
+    // args.push('/f', 'element.io\\New_Vector_Ltd.pem');
 
     if (options.hash !== "sha1") {
         args.push("/fd", options.hash);
@@ -34,12 +36,14 @@ function computeSignToolArgs(options, keyContainer) {
     }
 
     // msi does not support dual-signing
-    if (options.isNest) {
-      args.push("/as");
-    }
+    // unused args
+    // if (options.isNest) {
+    //   args.push("/as");
+    // }
 
     // https://github.com/electron-userland/electron-builder/issues/2875#issuecomment-387233610
-    args.push("/debug");
+    // the debug caused an error
+    // args.push("/debug");
     // must be last argument
     args.push(options.path);
 
@@ -48,15 +52,16 @@ function computeSignToolArgs(options, keyContainer) {
 
 exports.default = async function(options) {
     const keyContainer = process.env.SIGNING_KEY_CONTAINER;
-    if (keyContainer === undefined) {
-        console.warn(
-            "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" +
-            "! Skipping Windows signing.          !\n" +
-            "! SIGNING_KEY_CONTAINER not defined. !\n" +
-            "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-        );
-        return;
-    }
+    // the only certificate has load to key chain.
+    // if (keyContainer === undefined) {
+    //     console.warn(
+    //         "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" +
+    //         "! Skipping Windows signing.          !\n" +
+    //         "! SIGNING_KEY_CONTAINER not defined. !\n" +
+    //         "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+    //     );
+    //     return;
+    // }
 
     return new Promise((resolve, reject) => {
         const args = ['sign'].concat(computeSignToolArgs(options, keyContainer));
