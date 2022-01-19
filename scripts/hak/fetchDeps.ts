@@ -14,8 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-async function build(hakEnv, moduleInfo) {
-    await moduleInfo.scripts.build(hakEnv, moduleInfo);
-}
+import mkdirp from 'mkdirp';
 
-module.exports = build;
+import { DependencyInfo } from './dep';
+import HakEnv from './hakEnv';
+
+export default async function fetchDeps(hakEnv: HakEnv, moduleInfo: DependencyInfo): Promise<void> {
+    await mkdirp(moduleInfo.moduleDotHakDir);
+    if (moduleInfo.scripts.fetchDeps) {
+        await moduleInfo.scripts.fetchDeps(hakEnv, moduleInfo);
+    }
+}

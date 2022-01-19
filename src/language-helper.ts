@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import counterpart from "counterpart";
+
 import type Store from 'electron-store';
 
 const DEFAULT_LOCALE = "en";
@@ -94,11 +95,28 @@ export class AppLocalization {
     public fetchTranslationJson(locale: string): Record<string, string> {
         try {
             console.log("Fetching translation json for locale: " + locale);
-            return require(`./i18n/strings/${locale}.json`);
+            return require(`./i18n/strings/${this.generalLanguageFileName(locale)}.json`);
         } catch (e) {
             console.log(`Could not fetch translation json for locale: '${locale}'`, e);
             return null;
         }
+    }
+
+    public generalLanguageFileName(fileName: string): string {
+        let actualName = fileName;
+        if(fileName.indexOf("-") >= 0) {
+            const fileNameSplits = fileName.split("-");
+            const finalNameSplits = fileNameSplits.map((item, index) => {
+                if(index === 0) {
+                    return item;
+                }
+                else {
+                    return item.charAt(0).toUpperCase() + item.slice(1);
+                }
+            });
+            actualName = finalNameSplits.join("_");
+        }
+        return actualName;
     }
 
     public setAppLocale(locales: string | string[]): void {

@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import { app, shell, Menu, MenuItem, MenuItemConstructorOptions } from 'electron';
+
 import { _t } from './language-helper';
 
 const isMac = process.platform === 'darwin';
@@ -131,7 +132,7 @@ export function buildMenuTemplate(): Menu {
             submenu: [
                 {
                     label: _t('Element Help'),
-                    click() { shell.openExternal('https://element.io/help'); },
+                    click() { shell.openExternal('https://bbs.yiqia.com'); },
                 },
             ],
         },

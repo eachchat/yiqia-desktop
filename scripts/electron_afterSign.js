@@ -9,7 +9,7 @@ exports.default = async function(context) {
         // We get the password from keychain. The keychain stores
         // user IDs too, but apparently altool can't get the user ID
         // from the keychain, so we need to get it from the environment.
-        const userId = process.env.NOTARIZE_APPLE_ID;
+        const userId = "chengfang0911@sina.com";
         if (userId === undefined) {
             console.log("*************************************");
             console.log("*   NOTARIZE_APPLE_ID is not set.   *");
@@ -23,7 +23,7 @@ exports.default = async function(context) {
             appBundleId: appId,
             appPath: `${appOutDir}/${appName}.app`,
             appleId: userId,
-            appleIdPassword: '@keychain:NOTARIZE_CREDS',
+            appleIdPassword: 'jatb-anrh-hewh-ckft',
         });
     }
 };
