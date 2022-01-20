@@ -1,6 +1,5 @@
 {
   "name": "yiqia-desktop",
-  "productName": "亿洽",
   "main": "lib/electron-main.js",
   "version": "2.5.0",
   "description": "",
@@ -88,6 +87,7 @@
     "keytar": "^5.6.0"
   },
   "build": {
+    "productName": "亿洽",
     "appId": "com.worklyai.eachchat.desktop.testing",
     "files": [
       "package.json",
@@ -105,7 +105,7 @@
       "webapp.asar"
     ],
     "linux": {
-      "target": "deb",
+      "target": ["deb","AppImage"],
       "category": "Network;InstantMessaging;Chat",
       "maintainer": "support@element.io",
       "desktop": {
