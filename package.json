@@ -114,7 +114,8 @@
     },
     "mac": {
       "category": "public.app-category.social-networking",
-      "darkModeSupport": true
+      "darkModeSupport": true,
+      "icon": "build/icon.icns"
     },
     "win": {
       "target": {
