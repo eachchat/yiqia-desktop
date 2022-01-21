@@ -18,14 +18,14 @@ yarn install
 `webapp` 目录:
 ```
 # 事先拉取并且基于yiqia-web构建，然后把yiqia-web构建的webapp链接到yiqia-desktop.
-ln -s ../element-web/webapp ./
+ln -s ../yiqia-web/webapp ./
 ```
 
 
 
 构建
 ========
-现在你有一个拷贝的Elment版本，开始准备打包。如果你喜欢运行本地的yiqia，遵循下面的步骤。
+现在你有一个拷贝的亿洽版本，开始准备打包。如果你喜欢运行本地的yiqia，遵循下面的步骤。
 
 首先你要确保构建的本地模块在一个相同的目录。
 
