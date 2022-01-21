@@ -1,5 +1,5 @@
 {
-  "name": "yiqia-desktop",
+  "name": "Yiqia",
   "main": "lib/electron-main.js",
   "version": "2.5.0",
   "description": "",
