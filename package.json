@@ -1,8 +1,7 @@
 {
-  "name": "yiqia-desktop",
-  "productName": "亿洽",
+  "name": "Yiqia",
   "main": "lib/electron-main.js",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "",
   "author": "亿洽",
   "repository": {
@@ -88,6 +87,7 @@
     "keytar": "^5.6.0"
   },
   "build": {
+    "productName": "亿洽",
     "appId": "com.worklyai.eachchat.desktop.testing",
     "files": [
       "package.json",
@@ -105,7 +105,7 @@
       "webapp.asar"
     ],
     "linux": {
-      "target": "deb",
+      "target": ["deb","AppImage"],
       "category": "Network;InstantMessaging;Chat",
       "maintainer": "support@element.io",
       "desktop": {
@@ -114,7 +114,8 @@
     },
     "mac": {
       "category": "public.app-category.social-networking",
-      "darkModeSupport": true
+      "darkModeSupport": true,
+      "icon": "build/icon.icns"
     },
     "win": {
       "target": {
