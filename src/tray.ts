@@ -89,7 +89,7 @@ export function create(config: IConfig): void {
         }
 
         trayIcon.setImage(newFavicon);
-        global.mainWindow.setIcon(newFavicon);
+        //global.mainWindow.setIcon(newFavicon);
     });
 
     global.mainWindow.webContents.on('page-title-updated', function(ev, title) {
