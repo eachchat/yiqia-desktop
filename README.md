@@ -38,6 +38,7 @@ yarn run build:native
 
 现在你可以打包:
 
+Then, run
 ```
 yarn run build
 ```
