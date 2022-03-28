@@ -1,7 +1,7 @@
 {
   "name": "Yiqia",
   "main": "lib/electron-main.js",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "",
   "author": "亿洽",
   "repository": {
